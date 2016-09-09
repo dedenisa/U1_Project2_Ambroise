@@ -6,6 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 Minim minim;
 AudioPlayer input;
+AudioPlayer Square0;
 AudioPlayer Square1;
 AudioPlayer Square2;
 AudioPlayer Square3;
@@ -22,18 +23,17 @@ AudioPlayer Square13;
 AudioPlayer Square14;
 AudioPlayer Square15;
 AudioPlayer Square16;
-AudioPlayer Square0;
 
 AudioPlayer [] Songs = new AudioPlayer [17];
 int [] SquareX = new int [17];
 int [] SquareY = new int [17];
-int Minim = 0; 
+boolean [] isPlaying = new boolean [17];
 int x;
 int y;
 
 void setup()
 {
-  for (int i = 0; i < 17; i++)
+  for (int i = 0; i < 16; i++)
   {
     SquareX [i] = (int) random (0, width - 50);
     SquareY [i] = (int) random (0, height - 50);
@@ -41,7 +41,7 @@ void setup()
   fullScreen();
   background (255, 255, 255);
   minim = new Minim(this);
-  Songs[0] = minim.loadFile("TWRK - BADINGA!.MP3");
+  Songs[0] = minim.loadFile("TWRK - BaDINGA!.mp3");
   Songs[1] = minim.loadFile("twenty one pilots- Heathens (from Suicide Squad- The Album) [OFFICIAL VIDEO].mp3");
   Songs[2] = minim.loadFile("The Chainsmokers - Closer (Lyric) ft. Halsey.mp3");
   Songs[3] = minim.loadFile("Martin Garrix & Bebe Rexha - In The Name Of Love (Official Video).mp3");
@@ -66,20 +66,18 @@ void draw()
   for (int i = 0; i < 17; i++)
   {
     rect (SquareX [i], SquareY [i], 50, 50);
-    
-    if (x > SquareX [i] && x < SquareX [i]+50 && y > SquareY [i] && y < SquareY [i] + 50)
+
+    if (x > SquareX [i] && x < SquareX [i]+50 && y > SquareY [i] && y < SquareY [i]+ 50)
     {
-      Songs [i].play();
-      //Songs [i].stop();
+      println(Songs[i]);
+      Songs[i].play();
+    } else {
+      Songs[i].pause();
     }
   }
   if (mousePressed)
   {
     x = mouseX;
     y = mouseY;
-  }
-  {
-    rect(50, 50, 50, 50);
-    
   }
 }
