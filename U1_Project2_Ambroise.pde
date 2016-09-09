@@ -63,6 +63,16 @@ void setup()
 void draw()
 {
   fill(0);
+  playSongs();
+  if (mousePressed)
+  {
+    x = mouseX;
+    y = mouseY;
+  }
+}
+
+void playSongs()
+{
   for (int i = 0; i < 17; i++)
   {
     rect (SquareX [i], SquareY [i], 50, 50);
@@ -71,13 +81,10 @@ void draw()
     {
       println(Songs[i]);
       Songs[i].play();
-    } else {
+    } 
+    else 
+    {
       Songs[i].pause();
     }
-  }
-  if (mousePressed)
-  {
-    x = mouseX;
-    y = mouseY;
   }
 }
