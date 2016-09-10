@@ -1,4 +1,4 @@
-import ddf.minim.*;
+import ddf.minim.*; //<>//
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
 import ddf.minim.signals.*;
@@ -30,6 +30,7 @@ int [] SquareY = new int [17];
 boolean [] isPlaying = new boolean [17];
 int x;
 int y;
+int i;
 
 void setup()
 {
@@ -81,8 +82,7 @@ void playSongs()
     {
       println(Songs[i]);
       Songs[i].play();
-    } 
-    else 
+    } else
     {
       Songs[i].pause();
     }
