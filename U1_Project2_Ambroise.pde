@@ -1,28 +1,5 @@
 import ddf.minim.*; //<>//
-import ddf.minim.analysis.*;
-import ddf.minim.effects.*;
-import ddf.minim.signals.*;
-import ddf.minim.spi.*;
-import ddf.minim.ugens.*;
 Minim minim;
-AudioPlayer input;
-AudioPlayer Square0;
-AudioPlayer Square1;
-AudioPlayer Square2;
-AudioPlayer Square3;
-AudioPlayer Square4;
-AudioPlayer Square5;
-AudioPlayer Square6;
-AudioPlayer Square7;
-AudioPlayer Square8;
-AudioPlayer Square9;
-AudioPlayer Square10;
-AudioPlayer Square11;
-AudioPlayer Square12;
-AudioPlayer Square13;
-AudioPlayer Square14;
-AudioPlayer Square15;
-AudioPlayer Square16;
 
 AudioPlayer [] Songs = new AudioPlayer [17];
 int [] SquareX = new int [17];
